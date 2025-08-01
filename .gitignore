@@ -3,6 +3,7 @@
 
 # Build artifacts
 /dist
+backend/dist/
 /.next/
 /out/
 
