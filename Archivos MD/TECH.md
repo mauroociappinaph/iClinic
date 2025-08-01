@@ -5,7 +5,7 @@
 ## Backend
 - Node.js con NestJS
 - Base de datos:
-  - MongoDB con Mongoose
+  - MongoDB
 - ORM:
   - Prisma
 - Autenticación / Autorización:
