@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Comandos a ejecutar después de cada commit
+echo "Running post-commit hooks..."
