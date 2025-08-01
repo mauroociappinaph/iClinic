@@ -1,30 +1,36 @@
-import { IsString, IsNotEmpty, IsDateString, IsOptional, IsNumber } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsDateString,
+  IsOptional,
+  IsNumber,
+} from 'class-validator';
 
 export class CreatePatientDto {
   @IsString()
   @IsNotEmpty()
-  nombre: string;
+  name: string;
 
   @IsString()
   @IsNotEmpty()
-  dni: string;
+  idNumber: string;
 
   @IsString()
   @IsNotEmpty()
-  contacto: string;
+  contact: string;
 
   @IsOptional()
   @IsString()
-  obraSocial?: string;
+  insurance?: string;
 
   @IsDateString()
-  fechaNacimiento: Date;
+  birthDate: Date;
 
   @IsOptional()
   @IsString()
-  alergias?: string;
+  allergies?: string;
 
   @IsOptional()
   @IsNumber()
-  profesionalAsignadoId?: number;
+  assignedProfessionalId?: number;
 }

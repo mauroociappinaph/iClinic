@@ -6,23 +6,23 @@ export class Patient {
   id: number;
 
   @Column()
-  nombre: string;
+  name: string;
 
   @Column({ unique: true })
-  dni: string;
+  idNumber: string;
 
   @Column()
-  contacto: string;
+  contact: string;
 
   @Column({ nullable: true })
-  obraSocial: string;
+  insurance: string;
 
   @Column({ type: 'date' })
-  fechaNacimiento: Date;
+  birthDate: Date;
 
   @Column({ nullable: true })
-  alergias: string;
+  allergies: string;
 
   @Column({ nullable: true })
-  profesionalAsignadoId: number;
+  assignedProfessionalId: number;
 }
