@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useAuthStore } from "../../../lib/auth-store";
+import { Button } from "../../../components/ui/button";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -48,12 +49,9 @@ export default function LoginPage() {
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
+          <Button type="submit" className="w-full">
             Login
-          </button>
+          </Button>
         </form>
       </div>
     </div>

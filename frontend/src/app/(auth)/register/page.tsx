@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useAuthStore } from "../../../lib/auth-store";
+import { Button } from "../../../components/ui/button";
 
 export default function RegisterPage() {
   const [nombre, setNombre] = useState("");
@@ -78,12 +79,9 @@ export default function RegisterPage() {
               <option value="Admin">Admin</option>
             </select>
           </div>
-          <button
-            type="submit"
-            className="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
+          <Button type="submit" className="w-full">
             Register
-          </button>
+          </Button>
         </form>
       </div>
     </div>
