@@ -1,19 +1,20 @@
 "use client";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { useAuthStore } from '../lib/auth-store';
 import { useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-heading",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-body",
 });
 
 
@@ -39,9 +40,9 @@ export default function RootLayout({
   }, [user, pathname, router]);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}
