@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { login, register } from './auth-service';
+import * as jwt_decode from 'jwt-decode';
 
 interface User {
   email: string;
@@ -42,7 +43,14 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   initializeAuth: () => {
     const token = localStorage.getItem('token');
     if (token) {
-      set({ user: { email: 'user@example.com' } }); // You might want to fetch actual user data here
+      try {
+        const decodedToken: any = jwt_decode.jwtDecode(token);
+        set({ user: { email: decodedToken.email } });
+      } catch (error) {
+        console.error("Error decoding token:", error);
+        localStorage.removeItem('token');
+        set({ user: null });
+      }
     }
   },
 }));

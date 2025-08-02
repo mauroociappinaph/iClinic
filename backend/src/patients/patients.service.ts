@@ -25,7 +25,10 @@ export class PatientsService {
     return this.patientsRepository.save(patient);
   }
 
-  async update(id: number, updatePatientDto: UpdatePatientDto): Promise<Patient | null> {
+  async update(
+    id: number,
+    updatePatientDto: UpdatePatientDto,
+  ): Promise<Patient | null> {
     const patient = await this.patientsRepository.preload({
       id: id,
       ...updatePatientDto,
