@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useAuthStore } from "../../../lib/auth-store";
 import { Button } from "../../../components/ui/button";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -52,6 +53,12 @@ export default function LoginPage() {
           <Button type="submit" className="w-full">
             Login
           </Button>
+          <p className="mt-4 text-center text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-blue-600 hover:underline">
+              Register here
+            </Link>
+          </p>
         </form>
       </div>
     </div>
